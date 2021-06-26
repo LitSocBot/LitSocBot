@@ -54,13 +54,13 @@ async def debate(ctx):
     await ctx.reply("Here:\n"+show)
 
 loc=''
+lot= ['*','all','general', 'education', 'society', 'environment', 'politics', 'parenting', 'tech', 'healthcare', 'leisure', 'finance and politics', 'history', 'fun']
+global loc
+for term in lot:
+    if term =='*':
+         continue
+    loc=loc+'\n'+''.join(term)
 def generate_topic(category):
-    lot= ['*','all','general', 'education', 'society', 'environment', 'politics', 'parenting', 'tech', 'healthcare', 'leisure', 'finance and politics', 'history', 'fun']
-    global loc
-    for term in lot:
-        if term =='*':
-          continue
-        loc=loc+'\n'+''.join(term)
     f=open('topics_updated.txt','r')
     topics=f.read()
     f.close()
@@ -73,8 +73,6 @@ def generate_topic(category):
     i=random.randint(0,len(li))
     topic=li[i]
     return topic
-
-generate_topic('general')
 
 @bot.command(name='debatopic', help='Generate a debate topic based on some category\nList of Categories:'+loc)
 async def deb(ctx, choice:str):
