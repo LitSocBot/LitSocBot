@@ -34,3 +34,4 @@ class Crossword():
 		self.down_answers = self.json_data["answers"]["down"]
 		self.author = self.json_data["author"]
 		
+# abc
