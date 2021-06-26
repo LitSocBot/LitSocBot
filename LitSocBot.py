@@ -5,6 +5,7 @@ from discord.ext.commands.core import command
 import requests
 import json
 import CowsAndBulls
+import Anagram as ana
 import feedparser
 import random
 
@@ -23,23 +24,15 @@ async def on_ready():
 
 @bot.command(name='anagram', help='Gets possible anagram for the word')
 async def Anagram(ctx, choice : str):
-    response = requests.get("http://www.anagramica.com/all/" + choice)
-    json_data = json.loads(response.text)
-    words = "\n".join(json_data["all"])
-    await ctx.reply(ctx.author.mention +" Here are the possible anagrams\n" + words)
+    await ctx.reply(ctx.author.mention +" Here are the possible anagrams\n" + ana.getAnagrams(choice))
 
 @bot.command(name='wordswith', help='Gets possible words with the letters')
 async def Anagram(ctx, choice : str):
-    response = requests.get("http://www.anagramica.com/all/:" + choice)
-    json_data = json.loads(response.text)
-    words = "\n".join(json_data["all"])
-    await ctx.reply(ctx.author.mention +" Here are the possible words with those letters\n" + words)
+    await ctx.reply(ctx.author.mention +" Here are the possible words with those letters\n" + ana.getWordswith(choice))
 
 @bot.command(name='isthere', help='Tells if a word is there or not')
 async def Anagram(ctx, choice : str):
-    response = requests.get("http://www.anagramica.com/lookup/" + choice)
-    json_data = json.loads(response.text)
-    value = json_data["found"]
+    value = ana.isThere(choice)
     if(value):
         await ctx.reply(ctx.author.mention + "Yikes")
     else:
