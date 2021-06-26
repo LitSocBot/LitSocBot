@@ -60,13 +60,5 @@ class Crossword():
 			if value == 0:
 				pass
 			else:
-				cv.putText(self.blank, str(value), (row*33 + 4, col*33 + 10), cv.FONT_HERSHEY_PLAIN, 0.5, (0, 0, 0), thickness=1)	
-		
-		
-
-c = Crossword()
-print(c.url)
-print(c.author)
-# print(c.grid)
-cv.imshow('grid', c.blank)
-cv.waitKey(0)
+				cv.putText(self.blank, str(value), (row*33 + 4, col*33 + 12), cv.FONT_HERSHEY_PLAIN, 0.6, (0, 0, 0), thickness=1)	
+		cv.imwrite('crossword.jpg', self.blank)

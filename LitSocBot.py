@@ -8,9 +8,10 @@ import CowsAndBulls
 import Anagram as ana
 import feedparser
 import random
-
+import discord
 from discord.ext import commands
 from dotenv import load_dotenv
+from Crossword import Crossword
 
 
 load_dotenv()
@@ -70,5 +71,9 @@ def generate_topic(category):
 async def deb(ctx, choice:str):
     response = generate_topic(choice)
     await ctx.reply(response)
+
+@bot.command(name='startcwd', help='Generates a random crossword')
+async def cwd(ctx):
+    await ctx.send(file=discord.File('crossword.jpg'))
 
 bot.run(TOKEN)
