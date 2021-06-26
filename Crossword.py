@@ -30,8 +30,8 @@ class Crossword():
 		self.across_answers = self.json_data["answers"]["across"]
 		self.down_answers = self.json_data["answers"]["down"]
 		self.author = self.json_data["author"]
-		self.across_clues = self.json_data["clues"]["across"]
-		self.down_clues = self.json_data["clues"]["down"]
+		self.across_clues = r'{}'.format(self.json_data["clues"]["across"])
+		self.down_clues = r'{}'.format(self.json_data["clues"]["down"])
 		self.copyright = self.json_data["copyright"]
 		self.date = self.json_data["date"]
 		self.dow = self.json_data["dow"]
