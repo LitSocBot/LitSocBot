@@ -34,7 +34,7 @@ async def Anagram(ctx, choice : str):
 async def Anagram(ctx, choice : str):
     value = ana.isThere(choice)
     if(value):
-        await ctx.reply(ctx.author.mention + "Yikes")
+        await ctx.reply(ctx.author.mention + "Yes")
     else:
         await ctx.reply(ctx.author.mention + "Nope :(\nTry looking for something else")
         
