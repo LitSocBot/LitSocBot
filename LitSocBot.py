@@ -5,6 +5,8 @@ from discord.ext.commands.core import command
 import requests
 import json
 import CowsAndBulls
+import feedparser
+import random
 
 from discord.ext import commands
 from dotenv import load_dotenv
@@ -42,5 +44,13 @@ async def Anagram(ctx, choice : str):
         await ctx.reply(ctx.author.mention + "Yikes")
     else:
         await ctx.reply(ctx.author.mention + "Nope :(\nTry looking for something else")
+        
+@bot.command(aliases = ['deb'], help = 'Get random debate topics')
+async def debate(ctx):
+    NewsFeed = feedparser.parse("https://www.createdebate.com/browse/debaterss/all/rss")
+    number = random.randint(0,11)
+    entry = NewsFeed.entries[number]    
+    show = entry.title
+    await ctx.reply("Here:\n"+show)
 
 bot.run(TOKEN)
