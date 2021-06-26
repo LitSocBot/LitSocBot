@@ -39,23 +39,40 @@ async def Anagram(ctx, choice : str):
     else:
         await ctx.reply(ctx.author.mention + "Nope :(\nTry looking for something else")
         
-@bot.command(aliases = ['deb'], help = 'Get random debate topics')
+@bot.group(pass_context = True)
 async def debate(ctx):
     NewsFeed = feedparser.parse("https://www.createdebate.com/browse/debaterss/all/rss")
     number = random.randint(0,11)
     entry = NewsFeed.entries[number]    
     show = entry.title
-    await ctx.reply("Here:\n"+show)
+    if ctx.invoked_subcommand is None:
+        await ctx.reply("Here:\n"+show) 
+    else:
+        print("what")              
+
+@debate.group(pass_context =True)
+async def addtop(ctx,*,choice):
+    with open('topics_updated.txt','r') as f:
+        contents = f.readlines()
+        choice = choice + "\n"
+        contents.insert(146,choice)
+    
+
+    with open('topics_updated.txt','w') as f:
+        contents = "".join(contents)
+        f.write(contents)
+        
+    await ctx.reply("The topic has been added.")
 
 loc=''
-lot= ['*','all','general', 'education', 'society', 'environment', 'politics', 'parenting', 'tech', 'healthcare', 'leisure', 'finance and politics', 'history', 'fun']
+lot= ['*','all','general', 'education', 'society', 'environment', 'politics', 'parenting', 'tech', 'healthcare', 'leisure', 'finance and politics', 'history', 'fun','mods']
 for term in lot:
     if term =='*':
          continue
     loc=loc+'\n'+''.join(term)
 def generate_topic(category):
     f=open('topics_updated.txt','r')
-    topics=f.read()
+    topics=f.read()    
     f.close()
     lis=topics.split('\n')
     if category == 'all':
@@ -71,6 +88,7 @@ def generate_topic(category):
 async def deb(ctx, choice:str):
     response = generate_topic(choice)
     await ctx.reply(response)
+    
 
 @bot.command(name='startcwd', help='Generates a random crossword')
 async def cwd(ctx):
