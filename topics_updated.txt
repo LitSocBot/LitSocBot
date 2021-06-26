@@ -1,0 +1,144 @@
+general
+Should we ban homework: does homework promote learning?
+How essential is a college education?
+Banning mobile devices (cell phones, smartphones) at schools: yes or no?
+Is it appropriate to allow students to create their own curricula?
+Is abortion murder?
+Are violent video games appropriate entertainment for teenagers?
+Does social media contribute to teenage suicide?
+Does modern social media make people less socially active?
+How should modern society respond to teenage pregnancies?
+Is higher education a necessary prerequisite for an individual’s financial success in the future?
+*
+education
+Are private schools better than public schools?
+Should education be privatized entirely?
+Are student loans exploitative?
+Does the traditional classroom address contemporary society’s needs?
+Is allowing teachers to carry guns on campuses a good idea?
+Does the contemporary grading system work?
+Should college education be compulsory?
+Is it appropriate to teach religion in schools?
+Is homeschooling better than a public or private school education?
+Is it fair to require that all students learn at least one foreign language?
+*
+society
+Does the contemporary policing of marginalized communities in the United States contribute to the criminalization of youth?
+Should the death penalty be abolished in the United States?
+Is it ethical to have an abortion in the early stages of pregnancy?
+Does peer pressure absolve deliquent teens from cupabilty?
+Will electronic databases fully substitute brick and mortar libraries?
+Is cloning ethically acceptable?
+Is the legalization of marijuana a food idea?
+Should euthanasia be legalized?
+Is there any reason to raise minimum wages?
+Drug addicts: Do they need help or punishment?
+Is nationalism beneficial or dangerous in the context of globalization?
+*
+environment
+Is climate change already irreversible?
+Banning plastic bags and packaging: yes or no?
+Are genetically modified foods a viable solution?
+Banning zoos: yes or no?
+How does tourism affect the environment?
+Should there be more national parks in the United States?
+Is banning fracking a good idea?
+All people should become vegetarian.
+What is organic farming’s role in agriculture’s future?
+Are live animal exports ethically acceptable?
+*
+politics
+Political campaigns should not be allowed to accept money from.
+Democracy is the best form of government.
+Is it appropriate for governments to limit their citizens’ freedom of speech?
+Are taxes that increase at accelerating rates fair?
+Limiting terms for U.S. senators and representatives brings more harm than good.
+Former offenders should preserve their voting rights.
+Modern patterns of incarceration that affect minorities more than whites contribute to racial inequality in the US.
+Is it necessary for a political leader to be active on social media?
+Is the US Constitution a living document?
+Should the Supreme Court judges be appointed for predetermined fixed periods?
+*
+parenting
+Should children use smartphones without parental supervision?
+Teenage girls having access to birth control without parental supervision: yes or no?
+Should parents decide which career their children will pursue?
+Parents always treat their children fairly: yes or no?
+Is it ethically permissible for parents to  pick the genders of their future children?
+Gay couples are adopting children: pros and cons.
+Should parents control their children’s activities on social media?
+Is parental supervision the same as parental control?
+Teenage children and completely autonomous decision-making: should parents allow this?
+Is parental support essential for the future success of children?
+*
+tech
+Will technology make people smarter?
+Is artificial intelligence dangerous?
+Will robots increase people’s quality of life?
+How do technological advances influence us?
+Will humans colonize another planet soon?
+Can all cars become electric?
+Does technology intensify human communication?
+Recent developments in technology transform people’s interests: yes or no?
+Can people save nature using technology (or destroy it)?
+Do laws effectively keep up with changes in technology?
+*
+healthcare
+Justifying the legalization of recreational marijuana: yes or no?
+Is mandatory vaccination constitutional?
+Alternative medicine and its impact on the future of healthcare.
+Does technology promote our health?
+Modern healthcare and antibiotics.
+Is drug legalization a good idea?
+Does globalization promote universal healthcare?
+Should healthcare services for all citizens be fully funded by the government?
+Should the government be allowed to force parents to take their sick children to the hospital?
+Can competition improve the quality of healthcare services?
+*
+leisure
+Is a summer vacation better than a winter vacation?
+Encouraging teenagers to read books: are the outcomes encouraging?
+Has technology changed the way young people spend their leisure time?
+Has social media taken over our leisure time?
+Can daily leisure time be a substitute for a yearly vacation?
+Is leisure time essential for workplace effectiveness?
+Playing video games during leisure time: pros and cons.
+Has work-life balance changed with the advent of technology?
+Has globalization and our increased mobility changed the way we view vacations?
+Women spend their leisure time differently than men.
+*
+finance and politics
+Can the U.S. government ensure the country’s financial stability?
+How secure is mobile banking?
+Does the credit industry promote or hinder economic development?
+Is there any economic justification for wars?
+Should wealthy people pay higher taxes than the poor?
+How would lowering the voting age impact America’s future?
+Mass incarceration and its impact on U.S. politics.
+Mandatory financial education: pros and cons.
+Should online financial advice be available for every citizen?
+Can high profitability alone justify environmentally hazardous practices?
+*
+history
+History is an important subject that all students should learn: yes or no?.
+Is King Arthur a real historical figure or myth?
+Knowledge of history enriches one’s worldview: yes or no?
+What role did Britain play during the First World War?
+How have different historians interpreted World War Two?
+Was there any justification for the atomic bombings of Hiroshima and Nagasaki by the US?
+How shoudl we interpret the Revolutionary War?
+Ancient Roman culture versus contemporary culture.
+History & its impact on the future.
+Modern interracial conflicts evaluated from a historical perspective.
+*
+fun
+Are men stronger than women?
+Daydreaming versus dreaming at night: which is better?
+Communication between the sexes: do men and women have different approaches?
+Choosing the best pizza topping: healthy versus tasty.
+Do fairy tales affect children’s perception of reality?
+Is living together before marriage appropriate nowadays?
+Should teenagers get after-school jobs?
+Gender and life expectancy: what factors explain life expectancy gaps?
+From a historical perspective, are women smarter than men?
+*
