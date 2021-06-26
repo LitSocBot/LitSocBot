@@ -80,6 +80,7 @@ async def cwd(ctx):
     downclues = "\n".join(c.down_clues)
     acrossClues = acrossclues.replace("_", "\_")
     downClues = downclues.replace("_", "\_")
-    await ctx.reply("Clues:\nAcross:\n" + acrossClues + "\n\nDown:\n" + downClues)
+    await ctx.reply("**Clues**:\n**Across**:\n" + acrossClues)
+    await ctx.reply("**Down**:\n" + downClues)
     
 bot.run(TOKEN)
