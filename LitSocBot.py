@@ -55,7 +55,6 @@ async def debate(ctx):
 
 loc=''
 lot= ['*','all','general', 'education', 'society', 'environment', 'politics', 'parenting', 'tech', 'healthcare', 'leisure', 'finance and politics', 'history', 'fun']
-global loc
 for term in lot:
     if term =='*':
          continue
