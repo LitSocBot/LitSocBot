@@ -4,7 +4,7 @@ import os
 from discord.ext.commands.core import command
 import requests
 import json
-# import CowsAndBulls
+import CowsAndBulls
 import feedparser
 import random
 
@@ -53,20 +53,32 @@ async def debate(ctx):
     show = entry.title
     await ctx.reply("Here:\n"+show)
 
+loc=''
 def generate_topic(category):
+    lot= ['*','all','general', 'education', 'society', 'environment', 'politics', 'parenting', 'tech', 'healthcare', 'leisure', 'finance and politics', 'history', 'fun']
+    global loc
+    for term in lot:
+        if term =='*':
+          continue
+        loc=loc+'\n'+''.join(term)
     f=open('topics_updated.txt','r')
     topics=f.read()
     f.close()
     lis=topics.split('\n')
     if category == 'all':
-        return lis[random.randint(0,len(lis))]
+        topic=lis[random.randint(0,len(lis))]
+        if((topic not in lot)):
+            return topic
     li=lis[lis.index(category):lis.index('*',lis.index(category))]
     i=random.randint(0,len(li))
     topic=li[i]
     return topic
 
-@bot.command(name='debatopic', help='Generate a debate topic based on some category\nList of Categories:\ngeneral\neducation\nsociety\nenvironment\npolitics\nparenting\ntech\nhealthcare\nleisure\nfinance and politics\nhistory\nfun\nall')
+generate_topic('general')
+
+@bot.command(name='debatopic', help='Generate a debate topic based on some category\nList of Categories:'+loc)
 async def deb(ctx, choice:str):
     response = generate_topic(choice)
     await ctx.reply(response)
+
 bot.run(TOKEN)
