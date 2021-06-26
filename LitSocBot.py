@@ -4,7 +4,7 @@ import os
 from discord.ext.commands.core import command
 import requests
 import json
-import CowsAndBulls
+# import CowsAndBulls
 import feedparser
 import random
 
@@ -53,4 +53,20 @@ async def debate(ctx):
     show = entry.title
     await ctx.reply("Here:\n"+show)
 
+def generate_topic(category):
+    f=open('topics_updated.txt','r')
+    topics=f.read()
+    f.close()
+    lis=topics.split('\n')
+    if category == 'all':
+        return lis[random.randint(0,len(lis))]
+    li=lis[lis.index(category):lis.index('*',lis.index(category))]
+    i=random.randint(0,len(li))
+    topic=li[i]
+    return topic
+
+@bot.command(name='debatopic', help='Generate a debate topic based on some category\nList of Categories:\ngeneral\neducation\nsociety\nenvironment\npolitics\nparenting\ntech\nhealthcare\nleisure\nfinance and politics\nhistory\nfun\nall')
+async def deb(ctx, choice:str):
+    response = generate_topic(choice)
+    await ctx.reply(response)
 bot.run(TOKEN)
