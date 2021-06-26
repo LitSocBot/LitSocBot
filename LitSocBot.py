@@ -74,6 +74,10 @@ async def deb(ctx, choice:str):
 
 @bot.command(name='startcwd', help='Generates a random crossword')
 async def cwd(ctx):
+    c = Crossword()
     await ctx.send(file=discord.File('crossword.jpg'))
-
+    acrossclues = "\n".join(c.across_clues)
+    downclues = "\n".join(c.down_clues)
+    await ctx.reply("Clues:\nAcross:\n" + acrossclues + "\nDown:\n" + downclues)
+    
 bot.run(TOKEN)
