@@ -54,13 +54,19 @@ class Crossword():
 			col = count // self.rows
 			if(value == '.'):
 				cv.rectangle(self.blank, (row*33 + 3, col*33 + 3), (row*33 + 33, col*33 + 33), (0, 0, 0), thickness=-1)
+		for count, value in enumerate(self.gridnums):
+			row = count % self.rows
+			col = count // self.rows
+			if value == 0:
+				pass
+			else:
+				cv.putText(self.blank, str(value), (row*33 + 4, col*33 + 10), cv.FONT_HERSHEY_PLAIN, 0.5, (0, 0, 0), thickness=1)	
 		
-# abc
+		
+
 c = Crossword()
 print(c.url)
 print(c.author)
-print(c.grid)
+# print(c.grid)
 cv.imshow('grid', c.blank)
 cv.waitKey(0)
-# temp = np.zeros((13*30 + (13 -1)*3, 13*30 + (13 -1)*3, 3), dtype='uint8')
-# temp = 255, 255, 255
