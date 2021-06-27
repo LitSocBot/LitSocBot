@@ -7,7 +7,11 @@ def getWordswith(choice):
     url = base_url + "all/:" + choice
     response = requests.get(url)
     json_data = json.loads(response.text)
-    words = "\n".join(json_data["all"])
+    wordlist = json_data["all"]
+    for word in wordlist[::-1]:
+        if len(word) == 1:
+            wordlist.remove(word)
+    words = ", ".join(wordlist)
     return words
 
 def isThere(choice):
@@ -21,5 +25,5 @@ def getAnagrams(choice):
     url = base_url + "best/:" + choice
     response = requests.get(url)
     json_data = json.loads(response.text)
-    words = "\n".join(json_data["best"])
+    words = ", ".join(json_data["best"])
     return words

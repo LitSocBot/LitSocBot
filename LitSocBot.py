@@ -89,10 +89,11 @@ async def deb(ctx, choice:str):
     response = generate_topic(choice)
     await ctx.reply(response)
     
-
+c = Crossword()
 @bot.command(name='startcwd', help='Generates a random crossword')
 async def cwd(ctx):
-    c = Crossword()
+    # c = Crossword()
+
     await ctx.reply(file=discord.File('crossword.jpg'))
     acrossclues = "\n".join(c.across_clues)
     downclues = "\n".join(c.down_clues)
@@ -100,5 +101,20 @@ async def cwd(ctx):
     downClues = downclues.replace("_", "\_")
     await ctx.reply("**Clues**:\n**Across**:\n" + acrossClues)
     await ctx.reply("**Down**:\n" + downClues)
+    for ind in c.dic_across.keys():
+        print(ind, " : ", c.dic_across[ind])
+    for ind in c.dic_down.keys():
+        print(ind, " : ", c.dic_down[ind])
+
     
+@bot.command(name='answercwd', help='To answer a crossword')
+async def ans(ctx, val : int, choice : str, answer : str):
+    across = (choice == 'a')
+    answer = answer.upper()
+    if(c.checkAnswer(answer, val, across)):
+        await ctx.reply("Correct Answer")
+        c.enterAnswer(answer, val, across)
+        await ctx.reply(file=discord.File('crossword.jpg'))
+    else:
+        await ctx.reply("Wrong Answer")
 bot.run(TOKEN)
