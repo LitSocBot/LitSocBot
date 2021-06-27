@@ -73,30 +73,32 @@ class Crossword():
 				cv.putText(self.blank, str(value), (row*33 + 4, col*33 + 12), cv.FONT_HERSHEY_PLAIN, 0.6, (0, 0, 0), thickness=1)	
 		cv.imwrite('crossword.jpg', self.blank)
 
-	def enterAnswer(self, answer, val, across):
+	def enterAnswer(self, answer, val, choice):
 		for count, value in enumerate(self.gridnums):
 			row = count % self.rows
 			col = count // self.rows
 			if val == value:
 				for letter in answer:
 					cv.putText(self.blank, str(letter), (row*33 + 13, col*33 + 26), cv.FONT_HERSHEY_PLAIN, 1, (0, 0, 0), thickness = 2)
-					if across:
+					if choice.lower() == 'a':
 						row = row+1
 					else:
 						col = col + 1
 				cv.imwrite('crossword.jpg', self.blank)
 				return True
 
-	def checkAnswer(self, answer, val, across):
-		if across:
+	def checkAnswer(self, answer, val, choice):
+		if choice.lower() == 'a':
 			# checkString = str(val) + ". " + answer	#"2. ANS" ["2. CAT" "12. ANSWER"]
 			if self.dic_across[val] == answer:	
 				return True
 			else:
 				return False
-		else:
+		elif choice.lower() == 'd':
 			if self.dic_down[val] == answer:	
 				return True
 			else:
 				return False
+		else:
+			return False
 

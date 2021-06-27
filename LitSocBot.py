@@ -109,11 +109,11 @@ async def cwd(ctx):
     
 @bot.command(name='answercwd', help='To answer a crossword')
 async def ans(ctx, val : int, choice : str, answer : str):
-    across = (choice == 'a')
+    # across = (choice == 'a')
     answer = answer.upper()
-    if(c.checkAnswer(answer, val, across)):
+    if(c.checkAnswer(answer, val, choice)):
         await ctx.reply("Correct Answer")
-        c.enterAnswer(answer, val, across)
+        c.enterAnswer(answer, val, choice)
         await ctx.reply(file=discord.File('crossword.jpg'))
     else:
         await ctx.reply("Wrong Answer")
