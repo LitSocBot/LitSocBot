@@ -1,3 +1,4 @@
+import enum
 from typing import Optional
 import discord as dc
 import os
@@ -41,6 +42,20 @@ class Crossword():
 		self.columns = int(self.json_data["size"]["cols"])
 		self.blank = np.zeros((self.rows*30 + (self.rows +1)*3, self.rows*30 + (self.rows +1)*3, 3), dtype='uint8')
 		self.blank[:,:] = 255, 255, 255
+		self.dic_down = {}
+		self.dic_across = {}
+		for i in range(len(self.down_clues)):
+			elem = self.down_clues[i]
+			index = elem.find(". ")
+			num = int(elem[:index])
+			# self.down_answers[i] = elem[0:index+2] + self.down_answers[i]
+			self.dic_down[num] = self.down_answers[i]
+		for i in range(len(self.across_clues)):
+			elem = self.across_clues[i]
+			index = elem.find(". ")
+			# self.across_answers[i] = elem[0:index+2] + self.across_answers[i]
+			num = int(elem[:index])
+			self.dic_across[num] = self.across_answers[i]
 		for i in range(0, self.rows+1):
 			cv.rectangle(self.blank, (33*i, 0), (33*i + 3, self.rows*30 + (self.rows +1)*3), (128, 128, 128), thickness=-1)
 			cv.rectangle(self.blank, (0, 33*i), (self.rows*30 + (self.rows +1)*3, 33*i + 3), (128, 128, 128), thickness=-1)
@@ -57,3 +72,31 @@ class Crossword():
 			else:
 				cv.putText(self.blank, str(value), (row*33 + 4, col*33 + 12), cv.FONT_HERSHEY_PLAIN, 0.6, (0, 0, 0), thickness=1)	
 		cv.imwrite('crossword.jpg', self.blank)
+
+	def enterAnswer(self, answer, val, across):
+		for count, value in enumerate(self.gridnums):
+			row = count % self.rows
+			col = count // self.rows
+			if val == value:
+				for letter in answer:
+					cv.putText(self.blank, str(letter), (row*33 + 13, col*33 + 26), cv.FONT_HERSHEY_PLAIN, 1, (0, 0, 0), thickness = 2)
+					if across:
+						row = row+1
+					else:
+						col = col + 1
+				cv.imwrite('crossword.jpg', self.blank)
+				return True
+
+	def checkAnswer(self, answer, val, across):
+		if across:
+			# checkString = str(val) + ". " + answer	#"2. ANS" ["2. CAT" "12. ANSWER"]
+			if self.dic_across[val] == answer:	
+				return True
+			else:
+				return False
+		else:
+			if self.dic_down[val] == answer:	
+				return True
+			else:
+				return False
+
