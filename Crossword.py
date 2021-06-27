@@ -44,18 +44,22 @@ class Crossword():
 		self.blank[:,:] = 255, 255, 255
 		self.dic_down = {}
 		self.dic_across = {}
+		self.dic_down_clues = {}
+		self.dic_across_clues = {}
 		for i in range(len(self.down_clues)):
 			elem = self.down_clues[i]
 			index = elem.find(". ")
 			num = int(elem[:index])
 			# self.down_answers[i] = elem[0:index+2] + self.down_answers[i]
 			self.dic_down[num] = self.down_answers[i]
+			self.dic_down_clues[num] = ". ".join(elem.split(". ")[1:])
 		for i in range(len(self.across_clues)):
 			elem = self.across_clues[i]
 			index = elem.find(". ")
 			# self.across_answers[i] = elem[0:index+2] + self.across_answers[i]
 			num = int(elem[:index])
 			self.dic_across[num] = self.across_answers[i]
+			self.dic_across_clues[num] = ". ".join(elem.split(". ")[1:])
 		for i in range(0, self.rows+1):
 			cv.rectangle(self.blank, (33*i, 0), (33*i + 3, self.rows*30 + (self.rows +1)*3), (128, 128, 128), thickness=-1)
 			cv.rectangle(self.blank, (0, 33*i), (self.rows*30 + (self.rows +1)*3, 33*i + 3), (128, 128, 128), thickness=-1)
@@ -102,3 +106,9 @@ class Crossword():
 		else:
 			return False
 
+	def giveClues(self, val, choice):
+		val = int(val)
+		if choice.lower() == 'a':
+			return self.dic_across_clues.get(val, "Could not find any clue for that position")
+		elif choice.lower() == 'd':
+			return self.dic_down_clues.get(val, "Could not find any clue for that position")

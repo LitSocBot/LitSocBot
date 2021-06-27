@@ -117,4 +117,13 @@ async def ans(ctx, val : int, choice : str, answer : str):
         await ctx.reply(file=discord.File('crossword.jpg'))
     else:
         await ctx.reply("Wrong Answer")
+
+@bot.command(name='clues', help='Gives clues for specified grid number and direction')
+async def clues(ctx, *args):
+    response = ""
+    for i in range(len(args) // 2):
+        clue = c.giveClues(args[2*i], args[2*i+1])
+        response = response + args[2*i] + args[2*i+1] + ". " + clue + "\n"
+    await ctx.reply(response)
+
 bot.run(TOKEN)
