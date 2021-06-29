@@ -12,7 +12,7 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 from Crossword import Crossword
-
+from CrosswordGen import GenCwd
 
 load_dotenv()
 TOKEN = "ODU2NTg0MjMyNDczMTk4NjA5.YNDKOw.aOphgguom5abLFC9hUEgBS5EVz8"
@@ -126,4 +126,36 @@ async def clues(ctx, *args):
         response = response + args[2*i] + args[2*i+1] + ". " + clue + "\n"
     await ctx.reply(response)
 
+@bot.command(name='createcwd', help='Resets the word list to generate a new crossword')
+async def gencwd(ctx):
+    global crwd
+    crwd = GenCwd()
+    await ctx.reply("Word list succesfully reset")
+
+@bot.command(name='addword', help='To add a word to the word list which generates the crossword')
+async def addword(ctx, word):
+    crwd.addWord(word)
+    await ctx.reply(word + " has been added to the list")
+
+@bot.command(name='delword', help='To remove a word from the word list')
+async def delword(ctx, word):
+    deleted = crwd.delWord(word)
+    if deleted:
+        await ctx.reply(word + " has been deleted from the word list")
+    else:
+        await ctx.reply("No such word in the list")
+        
+@bot.command(name='showcwd', help='Generates a crossword using the word in the word list')
+async def showcwd(ctx):
+    crwd.computeCwd()
+    await ctx.reply(file=discord.File('Test_grid.png'))
+    file = open('Test_clues.txt', 'r')
+    content = file.read()
+    file.close()
+    await ctx.reply(content)
+
+@bot.command(name='showkey', help='Displays the grid with key to the crossword')
+async def showkey(ctx):
+    crwd.computeCwd()
+    await ctx.reply(file=discord.File('Test_key.png'))
 bot.run(TOKEN)
