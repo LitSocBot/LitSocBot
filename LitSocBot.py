@@ -156,6 +156,5 @@ async def showcwd(ctx):
 
 @bot.command(name='showkey', help='Displays the grid with key to the crossword')
 async def showkey(ctx):
-    crwd.computeCwd()
     await ctx.reply(file=discord.File('Test_key.png'))
 bot.run(TOKEN)
