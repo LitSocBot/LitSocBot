@@ -89,11 +89,11 @@ async def deb(ctx, choice:str):
     response = generate_topic(choice)
     await ctx.reply(response)
     
-c = Crossword()
+
 @bot.command(name='startcwd', help='Generates a random crossword')
 async def cwd(ctx):
-    # c = Crossword()
-
+    global c
+    c = Crossword()
     await ctx.reply(file=discord.File('crossword.jpg'))
     acrossclues = "\n".join(c.across_clues)
     downclues = "\n".join(c.down_clues)
@@ -120,10 +120,25 @@ async def ans(ctx, val : int, choice : str, answer : str):
 
 @bot.command(name='clues', help='Gives clues for specified grid number and direction')
 async def clues(ctx, *args):
-    response = ""
-    for i in range(len(args) // 2):
-        clue = c.giveClues(args[2*i], args[2*i+1])
-        response = response + args[2*i] + args[2*i+1] + ". " + clue + "\n"
-    await ctx.reply(response)
+    if len(args) == 1:
+        choice = args[0].lower()
+        acrossclues = "\n".join(c.across_clues)
+        downclues = "\n".join(c.down_clues)
+        acrossClues = acrossclues.replace("_", "\_")
+        downClues = downclues.replace("_", "\_")
+        if choice == 'all':
+            await ctx.reply("**Across**:\n" + acrossClues)
+            await ctx.reply("**Down**:\n" + downClues)
+        if choice == 'down':
+            await ctx.reply("**Down**:\n" + downClues)
+        if choice == 'across':
+            await ctx.reply("**Across**:\n" + acrossClues)
+    else:
+        response = ""
+        for i in range(len(args) // 2):
+            clue = c.giveClues(args[2*i], args[2*i+1])
+            response = response + args[2*i] + args[2*i+1] + ". " + clue + "\n"
+        await ctx.reply(response)
+
 
 bot.run(TOKEN)
