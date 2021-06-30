@@ -148,9 +148,10 @@ async def gencwd(ctx):
     await ctx.reply("Word list succesfully reset")
 
 @bot.command(name='addword', help='To add a word to the word list which generates the crossword')
-async def addword(ctx, word):
-    crwd.addWord(word)
-    await ctx.reply(word + " has been added to the list")
+async def addword(ctx, *args):
+    for word in args:
+        crwd.addWord(word)
+    await ctx.reply(", ".join(args) + " have been added to the list")
 
 @bot.command(name='delword', help='To remove a word from the word list')
 async def delword(ctx, word):
@@ -162,7 +163,7 @@ async def delword(ctx, word):
         
 @bot.command(name='showcwd', help='Generates a crossword using the word in the word list')
 async def showcwd(ctx):
-    crwd.computeCwd()
+    # crwd.computeCwd()
     await ctx.reply(file=discord.File('Test_grid.png'))
     file = open('Test_clues.txt', 'r')
     content = file.read()
@@ -172,4 +173,5 @@ async def showcwd(ctx):
 @bot.command(name='showkey', help='Displays the grid with key to the crossword')
 async def showkey(ctx):
     await ctx.reply(file=discord.File('Test_key.png'))
+
 bot.run(TOKEN)

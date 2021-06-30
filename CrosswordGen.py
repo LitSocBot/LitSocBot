@@ -22,11 +22,13 @@ class GenCwd():
 	def addWord(self, word):
 		self.wordlist.append(word)
 		self.len += 1
+		self.computeCwd()
 	
 	def delWord(self, word):
 		try:
 			self.wordlist.remove(word)
 			self.len -= 1
+			self.computeCwd()
 			return True
 		except ValueError:
 			return False
