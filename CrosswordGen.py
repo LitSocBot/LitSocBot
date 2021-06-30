@@ -11,6 +11,7 @@ from dotenv import load_dotenv
 import random as rd
 import cv2 as cv
 import numpy as np
+from bs4 import BeautifulSoup as bs
 
 class GenCwd():
 	def __init__(self):
@@ -41,6 +42,29 @@ class GenCwd():
 			file.write(word.upper())
 		file.close()
 		os.system("genxword -a -o \"Test\" wordlist.txt n")
+		file = open('Test_clues.txt', 'r')
+		lines = file.readlines()
+		file.close()
+		file = open('Clues.txt', 'w')
+		count = 0
+		for line in lines:
+			count += 1
+			if count > self.len + 2:
+				if line == 'Clues\n' or line == 'Across\n' or line == 'Down\n':
+					file.write(line)
+				else:
+					word = line.split(". ")[1].rstrip("\n")
+					page = requests.get("https://www.the-crossword-solver.com/word/" + word)
+					if page.status_code == 200:
+						soup = bs(page.content, features="lxml")
+						text = soup.find_all('a')
+						clue = text[7].get('title')
+						clue = clue.replace('Crossword clue ', '')
+						newline = line.split(". ")[0] + ". " + clue + "\n"
+						file.write(newline)
+					else:
+						file.write(line)
+		file.close()
 
 # c = GenCwd()
 # c.addWord("abcdef")

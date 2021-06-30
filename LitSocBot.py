@@ -165,7 +165,7 @@ async def delword(ctx, word):
 async def showcwd(ctx):
     # crwd.computeCwd()
     await ctx.reply(file=discord.File('Test_grid.png'))
-    file = open('Test_clues.txt', 'r')
+    file = open('Clues.txt', 'r')
     content = file.read()
     file.close()
     await ctx.reply(content)
