@@ -13,6 +13,7 @@ from discord.ext import commands
 from dotenv import load_dotenv
 from Crossword import Crossword
 from CrosswordGen import GenCwd
+import urllib.request
 
 load_dotenv()
 TOKEN = "ODU2NTg0MjMyNDczMTk4NjA5.YNDKOw.aOphgguom5abLFC9hUEgBS5EVz8"
@@ -173,5 +174,15 @@ async def showcwd(ctx):
 @bot.command(name='showkey', help='Displays the grid with key to the crossword')
 async def showkey(ctx):
     await ctx.reply(file=discord.File('Test_key.png'))
+
+@bot.command(name='xkcd', help='Displays a random xkcd comic strip')
+async def xkcdcomic(ctx):
+    number = str(random.randint(1, 2484))
+    url = "https://xkcd.com/" + number + "/info.0.json"
+    pg = requests.get(url)
+    json_data = json.loads(pg.text)
+    img = json_data["img"]
+    urllib.request.urlretrieve(img, "xkcd.png")
+    await ctx.reply(file=discord.File('xkcd.png'))
 
 bot.run(TOKEN)

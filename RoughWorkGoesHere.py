@@ -2,6 +2,8 @@ import os
 import requests
 import json
 from bs4 import BeautifulSoup as bs
+import urllib.request
+from PIL import Image
 
 def get_anagram(choice : str):
     response = requests.get("http://www.anagramica.com/all/" + choice)
@@ -25,3 +27,10 @@ print(clue)
 clue = clue.replace('Crossword clue ', '')
 print('*' * 50)
 print(clue)
+
+pg = requests.get("https://xkcd.com/613/info.0.json")
+json = json.loads(pg.text)
+img = json["img"]
+urllib.request.urlretrieve(img, "xkcd.png")
+img = Image.open("xkcd.png")
+img.show()
