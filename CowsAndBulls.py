@@ -9,7 +9,7 @@ def makeRandom():
 
 def compareNumbers(numA, numB):
     if(len(numA)!=len(numB)):
-        # handle this pls
+        # handle this
         return
     
     else:
