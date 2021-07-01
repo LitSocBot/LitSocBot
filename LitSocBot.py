@@ -4,7 +4,7 @@ import os
 from discord.ext.commands.core import command
 import requests
 import json
-import CowsAndBulls
+from CowsAndBulls import CowsAndBulls
 import Anagram as ana
 import feedparser
 import random
@@ -184,5 +184,32 @@ async def xkcdcomic(ctx):
     img = json_data["img"]
     urllib.request.urlretrieve(img, "xkcd.png")
     await ctx.reply(file=discord.File('xkcd.png'))
+
+@bot.command(name='startcb', help='Starts a new Cow Bulls game')
+async def startcowbull(ctx, dig : int):
+    global cb 
+    cb = CowsAndBulls()
+    cb.active=True
+    cb.digits=dig
+    cb.number=cb.makeRandom(cb.digits)
+    print(cb.number)
+    await ctx.reply('Game started\nPlease guess a {}-digit number'.format(cb.digits))
+
+@bot.command(name='guesscb', help='To make a guess')
+async def guesscowbull(ctx, num : str):
+    if(cb.active):
+        bulls, cows = CowsAndBulls.compareNumbers(cb.number, num)
+        if bulls == cb.digits:
+            await ctx.reply('Cows : {}\nBulls : {}\nYou win!!'.format(cows, bulls))
+            cb.active=False
+        elif bulls == -1:
+            await ctx.reply('Please enter a {}-digit number'.format(cb.digits))
+        else:
+            await ctx.reply('Cows : {}\nBulls : {}'.format(cows, bulls))
+
+@bot.command(name='stopcb', help='To make a guess')
+async def stopCowBull(ctx):
+    cb.active=False
+    await ctx.reply('Game stopped successfully.\n{} was the answer'.format(cb.number))
 
 bot.run(TOKEN)
