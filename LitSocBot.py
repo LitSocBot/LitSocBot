@@ -14,6 +14,8 @@ from dotenv import load_dotenv
 from Crossword import Crossword
 from CrosswordGen import GenCwd
 import urllib.request
+import numpy as np
+import cv2 as cv
 
 load_dotenv()
 TOKEN = "ODU2NTg0MjMyNDczMTk4NjA5.YNDKOw.aOphgguom5abLFC9hUEgBS5EVz8"
@@ -227,5 +229,57 @@ async def movies(ctx,*,choice):
     
     urllib.request.urlretrieve(p6, "poster.jpg")
     await ctx.reply(f"\nTitle: {p1}\nGenre: {p4}\nDirector:{p5}\nRuntime: {p2}\nimdb rating:{p3}",file=discord.File('poster.jpg') )
+
+@bot.command(name='ws', help= 'Generate a 10x10 wordsearch')
+async def wordsearch_(ctx):
+    response=requests.get('https://random-word-api.herokuapp.com/word?number=20')
+    l=response.json()
+    with open ('w.txt', 'w') as w:
+        c=0
+        for wor in l:
+            if c==10:
+                break
+            if(len(wor)<11):
+                w.write(wor+'\n')  
+                c+=1
+
+    os.system('python word_search.py')
+    # await ctx.reply('no thanks')
+    s=''
+    with open('sol.txt', 'r') as sol:
+        for line in sol:
+            s=s+''.join(line)
+    await ctx.reply(s)
+    
+    
+    rows=10
+    blank = np.zeros((rows*30 + (rows +1)*3, rows*30 + (rows +1)*3, 3), dtype='uint8')
+    blank[:,:] = 255, 255, 255
+
+    for i in range(0, rows+1):
+        cv.rectangle(blank, (33*i, 0), (33*i + 3, rows*30 + (rows +1)*3), (128, 128, 128), thickness=-1)
+        cv.rectangle(blank, (0, 33*i), (rows*30 + (rows +1)*3, 33*i + 3), (128, 128, 128), thickness=-1)
+
+    cv.imwrite('wordsearch.jpg', blank)
+    s=''
+    with open('ws.txt', 'r') as f:
+        st=f.read()
+    # ls=list(s)
+    # ls.remove('\n')
+    # print(ls)
+    ls=list(st)
+
+    count=0
+
+    for i in range(len(ls)):
+        row=count%10
+        col=count//10
+        cv.putText(blank, str(ls[i]), (row*33 +13, col*33 + 26), cv.FONT_HERSHEY_PLAIN, 1, (0, 0, 0), thickness = 2)
+        count+=1
+        cv.imwrite('wordsearch.jpg', blank)
+    # with open('ws.txt','r') as ws:
+    #     for line in ws:
+    #         s1=s1 + ''.join(line)
+    await ctx.reply(file=discord.File('wordsearch.jpg'))
 
 bot.run(TOKEN)
