@@ -212,4 +212,20 @@ async def stopCowBull(ctx):
     cb.active=False
     await ctx.reply('Game stopped successfully.\n{} was the answer'.format(cb.number))
 
+@bot.command(help = 'get movie details')
+async def movies(ctx,*,choice):
+    final = choice.replace(" ","+")
+    url = "http://www.omdbapi.com/?t=" + final + "&apikey=5a70a732"
+    response = requests.get(url)
+    json_data = json.loads(response.text)
+    p1 = json_data["Title"]
+    p2 = json_data["Runtime"]
+    p3 = json_data["imdbRating"]
+    p4 = json_data["Genre"]
+    p5 = json_data["Director"]
+    p6 = json_data["Poster"]
+    
+    urllib.request.urlretrieve(p6, "poster.jpg")
+    await ctx.reply(f"\nTitle: {p1}\nGenre: {p4}\nDirector:{p5}\nRuntime: {p2}\nimdb rating:{p3}",file=discord.File('poster.jpg') )
+
 bot.run(TOKEN)
