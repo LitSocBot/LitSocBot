@@ -1,6 +1,10 @@
 __pycache__/
 *.jpg
 *.png
+*.svg
 wordlist.txt
 Test_clues.txt
 Clues.txt
+sol.txt
+w.txt
+ws.txt
