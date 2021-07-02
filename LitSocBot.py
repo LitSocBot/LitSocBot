@@ -241,8 +241,12 @@ async def movies(ctx,*,choice):
         director = json_data["Director"]
         poster = json_data["Poster"]
         
-        urllib.request.urlretrieve(poster, "poster.jpg")
-        await ctx.reply(f"\n**Title :** {title}\n**Genre :** {genre}\n**Director :** {director}\n**Runtime :**  {runtime}\n**IMBb rating :** {rating}",file=discord.File('poster.jpg') )
+        if poster != "N/A":
+            urllib.request.urlretrieve(poster, "poster.jpg")
+            await ctx.reply(f"\n**Title :** {title}\n**Genre :** {genre}\n**Director :** {director}\n**Runtime :**  {runtime}\n**IMBb rating :** {rating}",file=discord.File('poster.jpg') )
+        
+        elif poster == "N/A":
+            await ctx.reply(f"\n**Title :** {title}\n**Genre :** {genre}\n**Director :** {director}\n**Runtime :**  {runtime}\n**IMBb rating :** {rating}")
 
     else :
         await ctx.reply("Either the info isnt available or the spelling is wrong")
