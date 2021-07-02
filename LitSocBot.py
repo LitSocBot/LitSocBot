@@ -13,12 +13,12 @@ from discord.ext import commands
 from dotenv import load_dotenv
 from Crossword import Crossword
 from CrosswordGen import GenCwd
+from private import *
 import urllib.request
 import numpy as np
 import cv2 as cv
 
 load_dotenv()
-TOKEN = "ODU2NTg0MjMyNDczMTk4NjA5.YNDKOw.aOphgguom5abLFC9hUEgBS5EVz8"
 
 bot = commands.Bot(command_prefix='!')
 
