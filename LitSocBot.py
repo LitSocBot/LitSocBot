@@ -282,4 +282,23 @@ async def wordsearch_(ctx):
     #         s1=s1 + ''.join(line)
     await ctx.reply(file=discord.File('wordsearch.jpg'))
 
+@bot.command(help = 'get IT books')
+async def itbooks(ctx,*,choice):
+
+    final = choice.replace(" ","+")
+    url = "https://api.itbook.store/1.0/search/"+ final
+    response = requests.get(url)
+    json_data = json.loads(response.text)
+
+    bookdesc = " "
+
+    for bookname in json_data["books"]: 
+        booktitle = bookname["title"]
+        description = bookname["subtitle"]       
+        link = bookname["url"]
+
+        bookdesc += "**"+booktitle+"**" + " : " + description + "\n" + "<" + link + ">" + "\n" 
+
+    await ctx.reply(bookdesc)
+
 bot.run(TOKEN)
