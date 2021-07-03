@@ -91,8 +91,7 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-discord bot be really cool
-
+ This project is a discord bot that is designed for Literary Clubs. <!--It has your everyday features like wordcheckers and anagram along with some word games. -->
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -101,7 +100,7 @@ To start using the bot just follow the installation procedure.
 
 ### Installation
 
-1. To add the bot to your server, just click on this [link](https://discord.com/channels/856584011434688522/858053945695404042/860797214141972531 "LitSocBot's Invite Link") 
+1. To add the bot to your server, just click on this [link](https://discord.com/api/oauth2/authorize?client_id=856584232473198609&permissions=0&scope=bot) and grant the necessary permissions
 
 
 <!-- USAGE EXAMPLES -->
@@ -164,8 +163,16 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-need to make a list of the api's we used
-
+The api's used in the project are:
+```sh
+https://api.itbook.store/1.0/search/%22
+https://random-word-api.herokuapp.com/word?number=20%27
+https://xkcd.com/
+https://www.createdebate.com/browse/debaterss/all/rss%22
+http://www.anagramica.com/
+http://www.omdbapi.com/
+https://www.the-crossword-solver.com/word/
+```
 
 
 
