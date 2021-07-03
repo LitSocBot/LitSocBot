@@ -46,7 +46,7 @@ async def Anagram(ctx, choice : str):
 #Using discord bot subcommand feature
 #primary command :will generate random debate topics
       
-@bot.group(pass_context = True)
+@bot.group(pass_context = True,help = 'Use addtop command (!debate addtop) to add a custom topic.')
 async def debate(ctx):             
     NewsFeed = feedparser.parse("https://www.createdebate.com/browse/debaterss/all/rss")
     
@@ -74,21 +74,30 @@ async def addtop(ctx,*,choice):
         
     await ctx.reply("The topic has been added.")
 
-loc=''
+
+#searching through a text file to generate debate topics under specific categories
+loc=''            #loc = list of contents
+
 lot= ['*','all','general', 'education', 'society', 'environment', 'politics', 'parenting', 'tech', 'healthcare', 'leisure', 'finance and politics', 'history', 'fun','mods']
-for term in lot:
+
+for term in lot:        #goes through list of topics and adds these topics to the string loc
     if term =='*':
          continue
     loc=loc+'\n'+''.join(term)
-def generate_topic(category):
+
+def generate_topic(category):     
     f=open('topics_updated.txt','r')
     topics=f.read()    
     f.close()
-    lis=topics.split('\n')
+
+    #moving the topics from the text file to a list
+    lis=topics.split('\n')     
     if category == 'all':
         topic=lis[random.randint(0,len(lis))]
         if((topic not in lot)):
             return topic
+    
+    #returns topics from specific categories
     li=lis[lis.index(category):lis.index('*',lis.index(category))]
     i=random.randint(0,len(li))
     topic=li[i]
@@ -270,10 +279,12 @@ async def movies(ctx,*,choice):
         await ctx.reply(embed = message)
 
 
+#a wordsearch that creates grids on random words
 @bot.command(name='ws', help= 'Generate a 10x10 wordsearch')
 async def wordsearch_(ctx):
     response=requests.get('https://random-word-api.herokuapp.com/word?number=20')
     l=response.json()
+
     with open ('w.txt', 'w') as w:
         c=0
         for wor in l:
@@ -284,14 +295,16 @@ async def wordsearch_(ctx):
                 c+=1
 
     os.system('python word_search.py')
-    # await ctx.reply('no thanks')
+
     s=''
-    with open('sol.txt', 'r') as sol:
+    #extracting solution from a file
+    with open('sol.txt', 'r') as sol: 
         for line in sol:
             s=s+''.join(line)
+
     await ctx.reply(s)
     
-    
+    #creating a blank 10x10 grid
     rows=10
     blank = np.zeros((rows*30 + (rows +1)*3, rows*30 + (rows +1)*3, 3), dtype='uint8')
     blank[:,:] = 255, 255, 255
@@ -304,22 +317,19 @@ async def wordsearch_(ctx):
     s=''
     with open('ws.txt', 'r') as f:
         st=f.read()
-    # ls=list(s)
-    # ls.remove('\n')
-    # print(ls)
+    
     ls=list(st)
 
     count=0
-
+    
+    #putting letters in the grid
     for i in range(len(ls)):
         row=count%10
         col=count//10
         cv.putText(blank, str(ls[i]), (row*33 +13, col*33 + 26), cv.FONT_HERSHEY_PLAIN, 1, (0, 0, 0), thickness = 2)
         count+=1
         cv.imwrite('wordsearch.jpg', blank)
-    # with open('ws.txt','r') as ws:
-    #     for line in ws:
-    #         s1=s1 + ''.join(line)
+    
     await ctx.reply(file=discord.File('wordsearch.jpg'))
 
 
