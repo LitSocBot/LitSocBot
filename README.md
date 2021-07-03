@@ -21,10 +21,10 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![Contributors][contributors-shield]][contributors-url]
+<!-- [![Contributors][contributors-shield]][contributors-url]
 [![Issues][issues-shield]][issues-url]
 [![Commits](https://img.shields.io/github/commit-activity/m/LitSocBot/LitSocBot?style=for-the-badge)][commit-activity-url]
-[![MIT License][license-shield]][license-url]
+[![MIT License][license-shield]][license-url] -->
 <!-- [![Forks][forks-shield]][forks-url] -->
 <!-- [![Stargazers][stars-shield]][stars-url] -->
 
@@ -32,6 +32,10 @@
 <p align="center">
     <a href= "https://github.com/LitSocBot/LitSocBot/graphs/contributors" alt="Contributors">
         <img src= "https://img.shields.io/github/contributors/LitSocBot/LitSocBot.svg?style=for-the-badge" /></a>
+    <a href= "https://github.com/LitSocBot/LitSocBot/issues" alt="Issues">
+        <img src= "https://img.shields.io/github/issues/LitSocBot/LitSocBot.svg?style=for-the-badge" /></a>
+    <a href= "https://github.com/LitSocBot/LitSocBot/commits" alt="Contributors">
+        <img src= "https://img.shields.io/github/commit-activity/m/LitSocBot/LitSocBot?style=for-the-badge" /></a>
 </p>
   
 
