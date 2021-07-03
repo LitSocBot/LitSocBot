@@ -342,10 +342,15 @@ async def itbooks(ctx,*,choice):
 
         bookdesc += "**"+booktitle+"**" + " : " + description + "\n" + "<" + link + ">" + "\n" 
 
-    if response.status_code == 200 :
+    if len(json_data["books"]) != 0 :
         await ctx.reply(bookdesc)
+
     else :
-        await ctx.reply("This info is not available.")
+        message = discord.Embed(title = "Error", description = "Either the info isn't available or the spelling is wrong.", color = 15158332 )
+
+        await ctx.reply(embed = message)
+
+        
 
 
 bot.run(TOKEN)
