@@ -41,25 +41,32 @@ async def Anagram(ctx, choice : str):
         await ctx.reply(ctx.author.mention + "Yes")
     else:
         await ctx.reply(ctx.author.mention + "Nope :(\nTry looking for something else")
-        
+
+#Debate Bot Commands 
+#Using discord bot subcommand feature
+#primary command :will generate random debate topics
+      
 @bot.group(pass_context = True)
-async def debate(ctx):
+async def debate(ctx):             
     NewsFeed = feedparser.parse("https://www.createdebate.com/browse/debaterss/all/rss")
-    number = random.randint(0,11)
+    
+    number = random.randint(0,11)  #there are only 12 debate topics in this api
     entry = NewsFeed.entries[number]    
     show = entry.title
+    
     if ctx.invoked_subcommand is None:
         await ctx.reply("Here:\n"+show) 
     else:
-        print("what")              
+        print("what")  
 
-@debate.group(pass_context =True)
-async def addtop(ctx,*,choice):
+#secondary command: will add topics given by the user to the category 'mods'
+
+@debate.group(pass_context =True)    
+async def addtop(ctx,*,choice):   
     with open('topics_updated.txt','r') as f:
         contents = f.readlines()
         choice = choice + "\n"
         contents.insert(146,choice)
-    
 
     with open('topics_updated.txt','w') as f:
         contents = "".join(contents)
@@ -214,21 +221,35 @@ async def stopCowBull(ctx):
     cb.active=False
     await ctx.reply('Game stopped successfully.\n{} was the answer'.format(cb.number))
 
-@bot.command(help = 'get movie details')
+
+#this command gives info on movies by searching through their titles
+@bot.command(help = 'Get movie details')
 async def movies(ctx,*,choice):
+
     final = choice.replace(" ","+")
     url = "http://www.omdbapi.com/?t=" + final + "&apikey=5a70a732"
+
     response = requests.get(url)
-    json_data = json.loads(response.text)
-    p1 = json_data["Title"]
-    p2 = json_data["Runtime"]
-    p3 = json_data["imdbRating"]
-    p4 = json_data["Genre"]
-    p5 = json_data["Director"]
-    p6 = json_data["Poster"]
+    json_data = json.loads(response.text)   
     
-    urllib.request.urlretrieve(p6, "poster.jpg")
-    await ctx.reply(f"\nTitle: {p1}\nGenre: {p4}\nDirector:{p5}\nRuntime: {p2}\nimdb rating:{p3}",file=discord.File('poster.jpg') )
+    if json_data["Response"] == "True":
+        
+        title = json_data["Title"]
+        runtime = json_data["Runtime"]
+        rating = json_data["imdbRating"]
+        genre = json_data["Genre"]
+        director = json_data["Director"]
+        poster = json_data["Poster"]
+        
+        if poster != "N/A":
+            urllib.request.urlretrieve(poster, "poster.jpg")
+            await ctx.reply(f"\n**Title :** {title}\n**Genre :** {genre}\n**Director :** {director}\n**Runtime :**  {runtime}\n**IMBb rating :** {rating}",file=discord.File('poster.jpg') )
+        
+        elif poster == "N/A":
+            await ctx.reply(f"\n**Title :** {title}\n**Genre :** {genre}\n**Director :** {director}\n**Runtime :**  {runtime}\n**IMBb rating :** {rating}")
+
+    else :
+        await ctx.reply("Either the info isnt available or the spelling is wrong")
 
 @bot.command(name='ws', help= 'Generate a 10x10 wordsearch')
 async def wordsearch_(ctx):
@@ -282,11 +303,14 @@ async def wordsearch_(ctx):
     #         s1=s1 + ''.join(line)
     await ctx.reply(file=discord.File('wordsearch.jpg'))
 
-@bot.command(help = 'get IT books')
+
+#this command gives info on books related to IT/CSE by searching through their titles
+@bot.command(help = 'Get IT books info')
 async def itbooks(ctx,*,choice):
 
     final = choice.replace(" ","+")
     url = "https://api.itbook.store/1.0/search/"+ final
+
     response = requests.get(url)
     json_data = json.loads(response.text)
 
@@ -299,6 +323,10 @@ async def itbooks(ctx,*,choice):
 
         bookdesc += "**"+booktitle+"**" + " : " + description + "\n" + "<" + link + ">" + "\n" 
 
-    await ctx.reply(bookdesc)
+    if response.status_code == 200 :
+        await ctx.reply(bookdesc)
+    else :
+        await ctx.reply("This info is not available.")
+
 
 bot.run(TOKEN)
