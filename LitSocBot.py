@@ -234,22 +234,41 @@ async def movies(ctx,*,choice):
     
     if json_data["Response"] == "True":
         
-        title = json_data["Title"]
+        movie_name = json_data["Title"]
         runtime = json_data["Runtime"]
         rating = json_data["imdbRating"]
         genre = json_data["Genre"]
         director = json_data["Director"]
         poster = json_data["Poster"]
         
-        if poster != "N/A":
+        if poster != "N/A":           
             urllib.request.urlretrieve(poster, "poster.jpg")
-            await ctx.reply(f"\n**Title :** {title}\n**Genre :** {genre}\n**Director :** {director}\n**Runtime :**  {runtime}\n**IMBb rating :** {rating}",file=discord.File('poster.jpg') )
-        
+            file = discord.File('poster.jpg')
+
+            message = discord.Embed(title = movie_name, color = 0xFFFFFF )
+            message.add_field(name = "Genre", value = genre, inline= False)
+            message.add_field(name= "Director", value= director, inline= False)
+            message.add_field(name= "Runtime", value= runtime, inline= False)
+            message.add_field(name= "IMDb Rating", value= rating,inline= False)
+            message.set_image(url = "attachment://poster.jpg")
+            
+            await ctx.reply(file = file,embed = message)
+
         elif poster == "N/A":
-            await ctx.reply(f"\n**Title :** {title}\n**Genre :** {genre}\n**Director :** {director}\n**Runtime :**  {runtime}\n**IMBb rating :** {rating}")
+
+            message = discord.Embed(title = movie_name, color = 16777215 )
+            message.add_field(name = "Genre", value = genre, inline= False)
+            message.add_field(name= "Director", value= director,inline= False)
+            message.add_field(name= "Runtime", value= runtime,inline= False)
+            message.add_field(name= "IMDb Rating", value= rating,inline= False)
+
+            await ctx.reply(embed = message)
 
     else :
-        await ctx.reply("Either the info isnt available or the spelling is wrong")
+        message = discord.Embed(title = "Error", description = "Either the info isn't available or the spelling is wrong.", color = 15158332 )
+
+        await ctx.reply(embed = message)
+
 
 @bot.command(name='ws', help= 'Generate a 10x10 wordsearch')
 async def wordsearch_(ctx):
