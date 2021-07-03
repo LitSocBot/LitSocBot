@@ -105,42 +105,42 @@ To start using the bot just follow the installation procedure.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-The bot uses the '!' prefix which means that any command to the bot must be preceded by the exclamation point ('!').
-type ```!help``` in your server to see the list of commands   
+The bot uses the '>>' prefix which means that any command to the bot must be preceded by the exclamation point ('>>').
+type ```>>help``` in your server to see the list of commands   
 
 The commands that can be used are:  
 
-```!help```: prints the list of available commands  
-```!help <choice>```: prints additional information about the input command   
+```>>help```: prints the list of available commands  
+```>>help <choice>```: prints additional information about the input command   
 
 General:
-1. ```!isthere <choice>```: checks if the input exists or not
-2. ```!itbooks <choice>```: returns of list of technical books related to the input choice 
-3. ```!movies <choice>```: returns information about the input movie 
-4. ```!wordswith <choice>```: returns a list of the words with the input word 
-5. ```!ws```: returns the image of a wordsearch along with a list of the hidden words
-6. ```!xkcd```: returns a random xkcd comic
-7. ```!anagram <choice>```: returns the possible anagrams of the input word 
-8. ```!debatopic <choice>```: returns a debate topic under the input category (list of categories can be found in ```!help debatopic```)
-9. ```!debate``` returns a debate topic from an American api 
-10. ```!debate addtop <choice>```: add a debate topic under a 'mods' category    
+1. ```>>isthere <choice>```: checks if the input exists or not
+2. ```>>itbooks <choice>```: returns of list of technical books related to the input choice 
+3. ```>>movies <choice>```: returns information about the input movie 
+4. ```>>wordswith <choice>```: returns a list of the words with the input word 
+5. ```>>ws```: returns the image of a wordsearch along with a list of the hidden words
+6. ```>>xkcd```: returns a random xkcd comic
+7. ```>>anagram <choice>```: returns the possible anagrams of the input word 
+8. ```>>debatopic <choice>```: returns a debate topic under the input category (list of categories can be found in ```>>help debatopic```)
+9. ```>>debate``` returns a debate topic from an American api 
+10. ```>>debate addtop <choice>```: add a debate topic under a 'mods' category    
 
 NYT Crossword:
-1. ```!startcwd```: starts a crossword game
-2. ```!answercwd <choice>```: checks if the entry is correct, adds it to the crossword if it is
-3. ```!clues```: displays the clues for the crossword    
+1. ```>>startcwd```: starts a crossword game
+2. ```>>answercwd <choice>```: checks if the entry is correct, adds it to the crossword if it is
+3. ```>>clues```: displays the clues for the crossword    
 
 Custom Crossword: Generate a custom crossword from a list of words
-1. ```!addword <choice>```: add the input word to the list
-2. ```!delword <choice>```: remove the input word from the list
-3. ```!createcwd```: creates the crossword
-4. ```!showcwd```: displays the crossword
-5. ```!showkey```: displays the solved crossword      
+1. ```>>addword <choice>```: add the input word to the list
+2. ```>>delword <choice>```: remove the input word from the list
+3. ```>>createcwd```: creates the crossword
+4. ```>>showcwd```: displays the crossword
+5. ```>>showkey```: displays the solved crossword      
 
 [Cows and Bulls](https://en.wikipedia.org/wiki/Bulls_and_Cows): 
-1. ```!startcb <choice>```: starts a game with the input number of digits 
-2. ```!guesscb <choice>```: returns the number of cows and bulls for the guess
-3. ```!stopcb```: ends the game
+1. ```>>startcb <choice>```: starts a game with the input number of digits 
+2. ```>>guesscb <choice>```: returns the number of cows and bulls for the guess
+3. ```>>stopcb```: ends the game
 
 <!-- CONTRIBUTING -->
 <!-- ## Contributing
