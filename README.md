@@ -25,11 +25,15 @@
 [![Issues][issues-shield]][issues-url]
 [![Commits](https://img.shields.io/github/commit-activity/m/LitSocBot/LitSocBot?style=for-the-badge)][commit-activity-url]
 [![MIT License][license-shield]][license-url]
-
 <!-- [![Forks][forks-shield]][forks-url] -->
 <!-- [![Stargazers][stars-shield]][stars-url] -->
 
 
+<p align="center">
+    <a href=[contributors-shield] alt="Contributors">
+        <img src= [contributors-url] /></a>
+</p>
+  
 
 <!-- PROJECT LOGO -->
 <br />
