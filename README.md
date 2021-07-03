@@ -125,7 +125,7 @@ The commands that can be used are:
 12. ```movies```
 13. ```showcwd```
 14. ```showkey```
-15. ``startcb```
+15. ```startcb```
 16. ```startcwd```
 17. ```stopcb```
 18. ```wordswith```
