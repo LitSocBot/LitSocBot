@@ -97,12 +97,11 @@ discord bot be really cool
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+To start using the bot just follow the installation procedure.
 
 ### Installation
 
-1. Add the bot to your server
-   
+1. To add the bot to your server, just click on the link below
 [Invite the bot to your server](https://discord.com/channels/856584011434688522/858053945695404042/860797214141972531 "LitSocBot's Invite Link")
 
 
@@ -111,31 +110,36 @@ To get a local copy up and running follow these simple steps.
 The bot uses the '!' prefix which means that any command to the bot must be preceded by the exclamation point ('!').
 type ```!help``` in your server to see the list of commands 
 The commands that can be used are:
-1. ```addword``` : 
-2. ```anagram```
-3. ```answercwd```
-4. ```clues```
-5. ```createcwd```
-6. ```debatopic```
-7. ```delword```
-8. ```guesscb```
-9. ```help```
-10. ```isthere```
-11. ```itbooks```
-12. ```movies```
-13. ```showcwd```
-14. ```showkey```
-15. ```startcb```
-16. ```startcwd```
-17. ```stopcb```
-18. ```wordswith```
-19. ```ws```
-20. ```xkcd```
-
-
+```!help```: prints the list of available commands
+```!help <choice>``` prints additional information about the input command 
+General:
+1. ```!isthere <choice>```: checks if the input exists or not
+2. ```!itbooks <choice>```: returns of list of technical books related to the input choice 
+3. ```!movies <choice>```: returns information about the input movie 
+4. ```!wordswith <choice>```: returns a list of the words with the input word 
+5. ```!ws```: returns the image of a wordsearch along with a list of the hidden words
+6. ```!xkcd```: returns a random xkcd comic
+7. ```!anagram <choice>```: returns the possible anagrams of the input word 
+8. ```!debatopic <choice>```: returns a debate topic under the input category (list of categories can be found in ```!help debatopic```)
+9. ```!debate``` returns a debate topic from an American api 
+10. ```!debate addtop <choice>```: add a debate topic under a 'mods' category
+NYT Crossword:
+1. ```!startcwd```: starts a crossword game
+2. ```!answercwd <choice>```: checks if the entry is correct, adds it to the crossword if it is
+3. ```!clues```: displays the clues for the crossword
+Custom Crossword: Generate a custom crossword from a list of words
+1. ```!addword <choice>```: add the input word to the list
+2. ```!delword <choice>```: remove the input word from the list
+3. ```!createcwd```: creates the crossword
+4.  ```!showcwd```: displays the crossword
+5. ```!showkey```: displays the solved crossword
+Cows and Bulls: For info on how to play the game click [here](https://en.wikipedia.org/wiki/Bulls_and_Cows)
+1.```!startcb <choice>```: starts a game with the input number of digits 
+2. ```!guesscb <choice>```: returns the number of cows and bulls for the guess
+3. ```!stopcb```: ends the game
 
 <!-- CONTRIBUTING -->
-## Contributing
+<!-- ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -143,7 +147,7 @@ Contributions are what make the open source community such an amazing place to b
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+5. Open a Pull Request -->
 
 
 
@@ -155,9 +159,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* []()
-* []()
-* []()
+need to make a list of the api's we used
 
 
 
