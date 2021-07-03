@@ -43,7 +43,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/LitSocBot/LitSocBot">
-    <img src="Logo.png" alt="Logo" width="100" height="100">
+    <img src="Logo.png" alt="Logo" width="300" height="300">
   </a>
 
   <h1 align="center">LitSocBot</h3>
