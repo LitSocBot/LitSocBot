@@ -193,7 +193,7 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [stars-url]: https://github.com/LitSocBot/LitSocBot/stargazers
 [issues-shield]: https://img.shields.io/github/issues/LitSocBot/LitSocBot.svg?style=for-the-badge
 [issues-url]: https://github.com/LitSocBot/LitSocBot/issues
-[commits-shield]: https://img.shields.io/github/commit-activity/m/LitSocBot/LitSocBot?style=for-the-badge
+[commits-shield]: https://img.shields.io/github/commit-activity/m/LitSocBot/LitSocBot.svg?style=for-the-badge
 [commits-url]: https://github.com/LitSocBot/LitSocBot/commits
 [license-shield]: https://img.shields.io/github/license/LitSocBot/LitSocBot.svg?style=for-the-badge
 [license-url]: https://github.com/LitSocBot/LitSocBot/blob/master/LICENSE.txt
