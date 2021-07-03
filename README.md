@@ -24,7 +24,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-
+[![Commits][commit-activity-shield]][commit-activity-url]
 [![MIT License][license-shield]][license-url]
 
 
