@@ -127,7 +127,7 @@ General:
 
 NYT Crossword:
 1. ```>>startcwd```: starts a crossword game
-2. ```>>answercwd <choice>```: checks if the entry is correct, adds it to the crossword if it is
+2. ```>>answercwd <square><down/across><guess>```: checks if the entry is correct, adds it to the crossword if it is
 3. ```>>clues```: displays the clues for the crossword    
 
 Custom Crossword: Generate a custom crossword from a list of words
