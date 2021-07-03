@@ -101,8 +101,7 @@ To start using the bot just follow the installation procedure.
 
 ### Installation
 
-1. To add the bot to your server, just click on the link below
-[Invite the bot to your server](https://discord.com/channels/856584011434688522/858053945695404042/860797214141972531 "LitSocBot's Invite Link")
+1. To add the bot to your server, just click on this [link](https://discord.com/channels/856584011434688522/858053945695404042/860797214141972531 "LitSocBot's Invite Link") 
 
 
 <!-- USAGE EXAMPLES -->
@@ -139,7 +138,7 @@ Custom Crossword: Generate a custom crossword from a list of words
 4. ```!showcwd```: displays the crossword
 5. ```!showkey```: displays the solved crossword      
 
-Cows and Bulls: <!-- (for info on how to play the game click [here](https://en.wikipedia.org/wiki/Bulls_and_Cows)): -->  
+[Cows and Bulls](https://en.wikipedia.org/wiki/Bulls_and_Cows): 
 1. ```!startcb <choice>```: starts a game with the input number of digits 
 2. ```!guesscb <choice>```: returns the number of cows and bulls for the guess
 3. ```!stopcb```: ends the game
