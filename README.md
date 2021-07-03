@@ -20,12 +20,12 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-<p align="center">
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Issues][issues-shield]][issues-url]
 [![Commits](https://img.shields.io/github/commit-activity/m/LitSocBot/LitSocBot?style=for-the-badge)][commit-activity-url]
 [![MIT License][license-shield]][license-url]
- </p>
+
 <!-- [![Forks][forks-shield]][forks-url] -->
 <!-- [![Stargazers][stars-shield]][stars-url] -->
 
