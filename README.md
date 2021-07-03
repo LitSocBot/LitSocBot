@@ -91,8 +91,7 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-discord bot be really cool
-
+ This project is a discord bot that is designed for Literary Clubs. <!--It has your everyday features like wordcheckers and anagram along with some word games. -->
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -101,47 +100,47 @@ To start using the bot just follow the installation procedure.
 
 ### Installation
 
-1. To add the bot to your server, just click on this [link](https://discord.com/channels/856584011434688522/858053945695404042/860797214141972531 "LitSocBot's Invite Link") 
+1. To add the bot to your server, just click on this [link](https://discord.com/api/oauth2/authorize?client_id=856584232473198609&permissions=0&scope=bot) and grant the necessary permissions
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-The bot uses the '!' prefix which means that any command to the bot must be preceded by the exclamation point ('!').
-type ```!help``` in your server to see the list of commands   
+The bot uses the '>>' prefix which means that any command to the bot must be preceded by the exclamation point ('>>').
+type ```>>help``` in your server to see the list of commands   
 
 The commands that can be used are:  
 
-```!help```: prints the list of available commands  
-```!help <choice>```: prints additional information about the input command   
+```>>help```: prints the list of available commands  
+```>>help <choice>```: prints additional information about the input command   
 
 General:
-1. ```!isthere <choice>```: checks if the input exists or not
-2. ```!itbooks <choice>```: returns of list of technical books related to the input choice 
-3. ```!movies <choice>```: returns information about the input movie 
-4. ```!wordswith <choice>```: returns a list of the words with the input word 
-5. ```!ws```: returns the image of a wordsearch along with a list of the hidden words
-6. ```!xkcd```: returns a random xkcd comic
-7. ```!anagram <choice>```: returns the possible anagrams of the input word 
-8. ```!debatopic <choice>```: returns a debate topic under the input category (list of categories can be found in ```!help debatopic```)
-9. ```!debate``` returns a debate topic from an American api 
-10. ```!debate addtop <choice>```: add a debate topic under a 'mods' category    
+1. ```>>isthere <choice>```: checks if the input exists or not
+2. ```>>itbooks <choice>```: returns of list of technical books related to the input choice 
+3. ```>>movies <choice>```: returns information about the input movie 
+4. ```>>wordswith <choice>```: returns a list of the words with the input word 
+5. ```>>ws```: returns the image of a wordsearch along with a list of the hidden words
+6. ```>>xkcd```: returns a random xkcd comic
+7. ```>>anagram <choice>```: returns the possible anagrams of the input word 
+8. ```>>debatopic <choice>```: returns a debate topic under the input category (list of categories can be found in ```>>help debatopic```)
+9. ```>>debate``` returns a debate topic from an American api 
+10. ```>>debate addtop <choice>```: add a debate topic under a 'mods' category    
 
 NYT Crossword:
-1. ```!startcwd```: starts a crossword game
-2. ```!answercwd <choice>```: checks if the entry is correct, adds it to the crossword if it is
-3. ```!clues```: displays the clues for the crossword    
+1. ```>>startcwd```: starts a crossword game
+2. ```>>answercwd <square><down/across><guess>```: checks if the entry is correct, adds it to the crossword if it is
+3. ```>>clues```: displays the clues for the crossword    
 
 Custom Crossword: Generate a custom crossword from a list of words
-1. ```!addword <choice>```: add the input word to the list
-2. ```!delword <choice>```: remove the input word from the list
-3. ```!createcwd```: creates the crossword
-4. ```!showcwd```: displays the crossword
-5. ```!showkey```: displays the solved crossword      
+1. ```>>addword <choice>```: add the input word to the list
+2. ```>>delword <choice>```: remove the input word from the list
+3. ```>>createcwd```: creates the crossword
+4. ```>>showcwd```: displays the crossword
+5. ```>>showkey```: displays the solved crossword      
 
 [Cows and Bulls](https://en.wikipedia.org/wiki/Bulls_and_Cows): 
-1. ```!startcb <choice>```: starts a game with the input number of digits 
-2. ```!guesscb <choice>```: returns the number of cows and bulls for the guess
-3. ```!stopcb```: ends the game
+1. ```>>startcb <choice>```: starts a game with the input number of digits 
+2. ```>>guesscb <choice>```: returns the number of cows and bulls for the guess
+3. ```>>stopcb```: ends the game
 
 <!-- CONTRIBUTING -->
 <!-- ## Contributing
@@ -159,13 +158,21 @@ Contributions are what make the open source community such an amazing place to b
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See [LICENSE](LICENSE.md) for more information.
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-need to make a list of the api's we used
-
+The api's used in the project are:
+```sh
+https://api.itbook.store/1.0/search/%22
+https://random-word-api.herokuapp.com/word?number=20%27
+https://xkcd.com/
+https://www.createdebate.com/browse/debaterss/all/rss%22
+http://www.anagramica.com/
+http://www.omdbapi.com/
+https://www.the-crossword-solver.com/word/
+```
 
 
 
