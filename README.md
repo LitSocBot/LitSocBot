@@ -35,7 +35,7 @@
     <a href= "https://github.com/LitSocBot/LitSocBot/issues" alt="Issues">
         <img src= "https://img.shields.io/github/issues/LitSocBot/LitSocBot.svg?style=for-the-badge&color=yellow" /></a>
     <a href= "https://github.com/LitSocBot/LitSocBot/commits" alt="Contributors">
-        <img src= "https://img.shields.io/github/commit-activity/m/LitSocBot/LitSocBot?style=for-the-badge" /></a>
+        <img src= "https://img.shields.io/github/commit-activity/w/LitSocBot/LitSocBot?style=for-the-badge" /></a>
 </p>
   
 
