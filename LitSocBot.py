@@ -161,7 +161,10 @@ async def gencwd(ctx):
 async def addword(ctx, *args):
     for word in args:
         crwd.addWord(word)
-    await ctx.reply(", ".join(args) + " have been added to the list")
+    if len(args) > 1:
+        await ctx.reply(", ".join(args) + " have been added to the list")
+    else:
+        await ctx.reply(", ".join(args) + " has been added to the list")
 
 @bot.command(name='delword', help='To remove a word from the word list')
 async def delword(ctx, word):
