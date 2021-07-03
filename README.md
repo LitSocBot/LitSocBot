@@ -133,7 +133,7 @@ Custom Crossword: Generate a custom crossword from a list of words
 3. ```!createcwd```: creates the crossword
 4.  ```!showcwd```: displays the crossword
 5. ```!showkey```: displays the solved crossword    
-Cows and Bulls: For info on how to play the game click [here](https://en.wikipedia.org/wiki/Bulls_and_Cows)  
+Cows and Bulls (for info on how to play the game click [here](https://en.wikipedia.org/wiki/Bulls_and_Cows)):  
 1.```!startcb <choice>```: starts a game with the input number of digits 
 2. ```!guesscb <choice>```: returns the number of cows and bulls for the guess
 3. ```!stopcb```: ends the game
