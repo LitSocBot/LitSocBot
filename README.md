@@ -21,10 +21,10 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
+<!-- [![Forks][forks-shield]][forks-url] -->
+<!-- [![Stargazers][stars-shield]][stars-url] -->
 [![Issues][issues-shield]][issues-url]
-[![Commits][commit-activity-shield]][commit-activity-url]
+[![Commits](https://img.shields.io/github/commit-activity/m/LitSocBot/LitSocBot?style=for-the-badge)][commit-activity-url]
 [![MIT License][license-shield]][license-url]
 
 
