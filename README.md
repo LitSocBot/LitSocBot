@@ -30,8 +30,8 @@
 
 
 <p align="center">
-    <a href=[contributors-shield] alt="Contributors">
-        <img src= [contributors-url] /></a>
+    <a href= "https://github.com/LitSocBot/LitSocBot/graphs/contributors" alt="Contributors">
+        <img src= "https://img.shields.io/github/contributors/LitSocBot/LitSocBot.svg?style=for-the-badge" /></a>
 </p>
   
 
