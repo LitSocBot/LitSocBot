@@ -110,8 +110,8 @@ To start using the bot just follow the installation procedure.
 The bot uses the '!' prefix which means that any command to the bot must be preceded by the exclamation point ('!').
 type ```!help``` in your server to see the list of commands   
 The commands that can be used are:  
-```!help```: prints the list of available commands
-```!help <choice>``` prints additional information about the input command    
+```!help```: prints the list of available commands  
+```!help <choice>``` prints additional information about the input command   
 General:
 1. ```!isthere <choice>```: checks if the input exists or not
 2. ```!itbooks <choice>```: returns of list of technical books related to the input choice 
@@ -132,8 +132,8 @@ Custom Crossword: Generate a custom crossword from a list of words
 2. ```!delword <choice>```: remove the input word from the list
 3. ```!createcwd```: creates the crossword
 4.  ```!showcwd```: displays the crossword
-5. ```!showkey```: displays the solved crossword    
-Cows and Bulls (for info on how to play the game click [here](https://en.wikipedia.org/wiki/Bulls_and_Cows)):  
+5. ```!showkey```: displays the solved crossword      
+Cows and Bulls (for info on how to play the game click [here](https://en.wikipedia.org/wiki/Bulls_and_Cows)):
 1.```!startcb <choice>```: starts a game with the input number of digits 
 2. ```!guesscb <choice>```: returns the number of cows and bulls for the guess
 3. ```!stopcb```: ends the game
