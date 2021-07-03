@@ -92,9 +92,8 @@ To get a local copy up and running follow these simple steps.
 ### Installation
 
 1. Add the bot to your server
-   ```sh
-   gautham put invite link here pls
-   ```
+   
+[Invite the bot to your server](https://discord.com/channels/856584011434688522/858053945695404042/860797214141972531 "LitSocBot's Invite Link")
 
 
 <!-- USAGE EXAMPLES -->
