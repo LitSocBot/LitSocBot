@@ -21,12 +21,11 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![Contributors][contributors-shield]][contributors-url]
-<!-- [![Forks][forks-shield]][forks-url] -->
-<!-- [![Stargazers][stars-shield]][stars-url] -->
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![Commits][commits-shield]][commits-url]
-<!-- [![MIT License][license-shield]][license-url] -->
-<!-- [![LinkedIn][linkedin-shield]][linkedin-url] -->
+[![MIT License][license-shield]][license-url]
+
 
 
 
@@ -40,7 +39,7 @@
   <h3 align="center">LitSocBot</h3>
 
   <p align="center">
-    project_description
+    A discord bot for any literary society
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
@@ -61,22 +60,16 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
@@ -86,19 +79,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
-
-
-### Built With
-
-* []()
-* []()
-* []()
-
+discord bot be really cool
 
 
 <!-- GETTING STARTED -->
@@ -106,40 +89,39 @@ Here's a blank template to get started:
 
 To get a local copy up and running follow these simple steps.
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
 ### Installation
 
-1. Clone the repo
+1. Add the bot to your server
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   gautham put invite link here pls
    ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
+The bot uses the '!' prefix which means that any command to the bot must be preceded by the exclamation point ('!').
+type ```!help``` in your server to see the list of commands 
+The commands that can be used are:
+1. ```addword``` : 
+2. ```anagram```
+3. ```answercwd```
+4. ```clues```
+5. ```createcwd```
+6. ```debatopic```
+7. ```delword```
+8. ```guesscb```
+9. ```help```
+10. ```isthere```
+11. ```itbooks```
+12. ```movies```
+13. ```showcwd```
+14. ```showkey```
+15. ``startcb```
+16. ```startcwd```
+17. ```stopcb```
+18. ```wordswith```
+19. ```ws```
+20. ```xkcd```
 
 
 
@@ -161,17 +143,6 @@ Contributions are what make the open source community such an amazing place to b
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-
-
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
@@ -185,17 +156,15 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/LitSocBot/LitSocBot.svg?style=for-the-badge
-[contributors-url]: https://github.com/LitSocBot/LitSocBot/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/LitSocBot/LitSocBot.svg?style=for-the-badge
-[forks-url]: https://github.com/LitSocBot/LitSocBot/network/members
-[stars-shield]: https://img.shields.io/github/stars/LitSocBot/LitSocBot.svg?style=for-the-badge
-[stars-url]: https://github.com/LitSocBot/LitSocBot/stargazers
-[issues-shield]: https://img.shields.io/github/issues/LitSocBot/LitSocBot.svg?style=for-the-badge
-[issues-url]: https://github.com/LitSocBot/LitSocBot/issues
-[commits-shield]: https://img.shields.io/github/commit-activity/m/LitSocBot/LitSocBot.svg?style=for-the-badge
-[commits-url]: https://github.com/LitSocBot/LitSocBot/commits
-[license-shield]: https://img.shields.io/github/license/LitSocBot/LitSocBot.svg?style=for-the-badge
-[license-url]: https://github.com/LitSocBot/LitSocBot/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
+[contributors-url]: https://github.com/github_username/repo/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
+[forks-url]: https://github.com/github_username/repo/network/members
+[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=for-the-badge
+[stars-url]: https://github.com/github_username/repo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=for-the-badge
+[issues-url]: https://github.com/github_username/repo/issues
+[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=for-the-badge
+[license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/github_username
