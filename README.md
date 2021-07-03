@@ -109,9 +109,12 @@ To start using the bot just follow the installation procedure.
 ## Usage
 The bot uses the '!' prefix which means that any command to the bot must be preceded by the exclamation point ('!').
 type ```!help``` in your server to see the list of commands   
+
 The commands that can be used are:  
+
 ```!help```: prints the list of available commands  
-```!help <choice>``` prints additional information about the input command   
+```!help <choice>```: prints additional information about the input command   
+
 General:
 1. ```!isthere <choice>```: checks if the input exists or not
 2. ```!itbooks <choice>```: returns of list of technical books related to the input choice 
@@ -123,20 +126,23 @@ General:
 8. ```!debatopic <choice>```: returns a debate topic under the input category (list of categories can be found in ```!help debatopic```)
 9. ```!debate``` returns a debate topic from an American api 
 10. ```!debate addtop <choice>```: add a debate topic under a 'mods' category    
+
 NYT Crossword:
 1. ```!startcwd```: starts a crossword game
 2. ```!answercwd <choice>```: checks if the entry is correct, adds it to the crossword if it is
 3. ```!clues```: displays the clues for the crossword    
+
 Custom Crossword: Generate a custom crossword from a list of words
 1. ```!addword <choice>```: add the input word to the list
 2. ```!delword <choice>```: remove the input word from the list
 3. ```!createcwd```: creates the crossword
-4.  ```!showcwd```: displays the crossword
+4. ```!showcwd```: displays the crossword
 5. ```!showkey```: displays the solved crossword      
+
 Cows and Bulls: <!-- (for info on how to play the game click [here](https://en.wikipedia.org/wiki/Bulls_and_Cows)): -->  
-19.```!startcb <choice>```: starts a game with the input number of digits 
-20. ```!guesscb <choice>```: returns the number of cows and bulls for the guess
-21. ```!stopcb```: ends the game
+1. ```!startcb <choice>```: starts a game with the input number of digits 
+2. ```!guesscb <choice>```: returns the number of cows and bulls for the guess
+3. ```!stopcb```: ends the game
 
 <!-- CONTRIBUTING -->
 <!-- ## Contributing
