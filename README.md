@@ -111,7 +111,7 @@ The bot uses the '!' prefix which means that any command to the bot must be prec
 type ```!help``` in your server to see the list of commands 
 The commands that can be used are:
 ```!help```: prints the list of available commands
-```!help <choice>``` prints additional information about the input command 
+```!help <choice>``` prints additional information about the input command__
 General:
 1. ```!isthere <choice>```: checks if the input exists or not
 2. ```!itbooks <choice>```: returns of list of technical books related to the input choice 
