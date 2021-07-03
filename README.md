@@ -21,11 +21,12 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
+<!-- [![Forks][forks-shield]][forks-url] -->
+<!-- [![Stargazers][stars-shield]][stars-url] -->
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![Commits][commits-shield]][commits-url]
+<!-- [![MIT License][license-shield]][license-url] -->
+<!-- [![LinkedIn][linkedin-shield]][linkedin-url] -->
 
 
 
@@ -192,6 +193,8 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [stars-url]: https://github.com/LitSocBot/LitSocBot/stargazers
 [issues-shield]: https://img.shields.io/github/issues/LitSocBot/LitSocBot.svg?style=for-the-badge
 [issues-url]: https://github.com/LitSocBot/LitSocBot/issues
+[commits-shield]: https://img.shields.io/github/commit-activity/m/LitSocBot/LitSocBot?style=for-the-badge
+[commits-url]: https://github.com/LitSocBot/LitSocBot/commits
 [license-shield]: https://img.shields.io/github/license/LitSocBot/LitSocBot.svg?style=for-the-badge
 [license-url]: https://github.com/LitSocBot/LitSocBot/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
