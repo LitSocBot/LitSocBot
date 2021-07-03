@@ -76,7 +76,16 @@ class Crossword():
 			else:
 				cv.putText(self.blank, str(value), (row*33 + 4, col*33 + 12), cv.FONT_HERSHEY_PLAIN, 0.6, (0, 0, 0), thickness=1)	
 		cv.imwrite('crossword.jpg', self.blank)
-
+	
+	def revealAnswer(self):
+		self.reveal = self.blank.copy()
+		for count, value in enumerate(self.grid):
+			row = count % self.rows
+			col = count // self.rows
+			if(value != '.'):
+				cv.putText(self.reveal, str(self.grid[count]), (row*33 + 13, col*33 + 26), cv.FONT_HERSHEY_PLAIN, 1, (0, 0, 0), thickness = 2)
+			cv.imwrite('answer.jpg', self.reveal)
+	
 	def enterAnswer(self, answer, val, choice):
 		for count, value in enumerate(self.gridnums):
 			row = count % self.rows

@@ -137,6 +137,11 @@ async def ans(ctx, val : int, choice : str, answer : str):
     else:
         await ctx.reply("Wrong Answer")
 
+@bot.command(name='revealcwd', help='Reveals answers of the crossword')
+async def reveal(ctx):
+    c.revealAnswer()
+    await ctx.reply(file=discord.File('answer.jpg'))
+
 @bot.command(name='clues', help='Gives clues for specified grid number and direction')
 async def clues(ctx, *args):
     if len(args) == 1:
