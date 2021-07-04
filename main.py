@@ -47,7 +47,7 @@ async def Anagram(ctx, choice : str):
 #Debate Bot Commands 
 #Using discord bot subcommand feature
 #primary command :will generate random debate topics     
-@bot.group(pass_context = True,help = 'Use addtop command (!debate addtop) to add a custom topic.')
+@bot.group(pass_context = True,help = 'Use addtop command (>>debate addtop) to add a custom topic.')
 async def debate(ctx):             
     NewsFeed = feedparser.parse("https://www.createdebate.com/browse/debaterss/all/rss")
     
