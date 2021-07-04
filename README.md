@@ -105,7 +105,7 @@ To start using the bot just follow the installation procedure.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-The bot uses the '>>' prefix which means that any command to the bot must be preceded by the exclamation point ('>>').
+The bot uses the '>>' prefix which means that any command to the bot must be preceded by double right angle brackets ('>>').
 type ```>>help``` in your server to see the list of commands   
 
 The commands that can be used are:  
