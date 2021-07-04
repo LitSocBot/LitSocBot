@@ -26,6 +26,7 @@ bot = commands.Bot(command_prefix='!')
 async def on_ready():
     print("Logged in as {0.user}".format(bot))
 
+
 @bot.command(name='anagram', help='Gets possible anagram for the word')
 async def Anagram(ctx, choice : str):
     await ctx.reply(ctx.author.mention +" Here are the possible anagrams\n" + ana.getAnagrams(choice))
@@ -42,10 +43,10 @@ async def Anagram(ctx, choice : str):
     else:
         await ctx.reply(ctx.author.mention + "Nope :(\nTry looking for something else")
 
+
 #Debate Bot Commands 
 #Using discord bot subcommand feature
-#primary command :will generate random debate topics
-      
+#primary command :will generate random debate topics     
 @bot.group(pass_context = True,help = 'Use addtop command (!debate addtop) to add a custom topic.')
 async def debate(ctx):             
     NewsFeed = feedparser.parse("https://www.createdebate.com/browse/debaterss/all/rss")
@@ -60,7 +61,6 @@ async def debate(ctx):
         print("what")  
 
 #secondary command: will add topics given by the user to the category 'mods'
-
 @debate.group(pass_context =True)    
 async def addtop(ctx,*,choice):   
     with open('topics_updated.txt','r') as f:
@@ -366,9 +366,7 @@ async def itbooks(ctx,*,choice):
     else :
         message = discord.Embed(title = "Error", description = "Either the info isn't available or the spelling is wrong.", color = 15158332 )
 
-        await ctx.reply(embed = message)
-
+        await ctx.reply(embed = message)        
         
-
 
 bot.run(TOKEN)
