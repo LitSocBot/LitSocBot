@@ -13,19 +13,34 @@ from discord.ext import commands
 from dotenv import load_dotenv
 from Crossword import Crossword
 from CrosswordGen import GenCwd
-from private import *
+# from private import *
 import urllib.request
 import numpy as np
 import cv2 as cv
+from keep_alive import keep_alive
+
+
+TOKEN = os.environ['token']
 
 load_dotenv()
 
-bot = commands.Bot(command_prefix='>>')
+# Change only the no_category default string
+help_command = commands.DefaultHelpCommand(
+    no_category = 'Read it and weep'
+)
 
+bot = commands.Bot(
+    command_prefix = commands.when_mentioned_or('>>'),
+    help_command = help_command
+)
 @bot.event
 async def on_ready():
     print("Logged in as {0.user}".format(bot))
 
+
+# @bot.command(name='readme', help='Gets the link to the readme for the bot')
+# async def ReadMe(ctx):
+#   await ctx.reply('<https://github.com/LitSocBot/LitSocBot/blob/main/README.md>')
 
 @bot.command(name='anagram', help='Gets possible anagram for the word')
 async def Anagram(ctx, choice : str):
@@ -368,5 +383,5 @@ async def itbooks(ctx,*,choice):
 
         await ctx.reply(embed = message)        
         
-
+keep_alive()
 bot.run(TOKEN)
