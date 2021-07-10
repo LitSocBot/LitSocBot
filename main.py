@@ -216,15 +216,19 @@ async def showcwd(ctx):
 async def showkey(ctx):
     await ctx.reply(file=discord.File('Test_key.png'))
 
-@bot.command(name='xkcd', help='Displays a random xkcd comic strip')
-async def xkcdcomic(ctx):
-    number = str(random.randint(1, 2484))
-    url = "https://xkcd.com/" + number + "/info.0.json"
+@bot.command(name='xkcd', help='Displays the XKCD corresponding to number(if provided).\n Otherwise, outputs a random xkcd comic strip.')
+async def xkcdcomic(ctx, number: int=None):
+    if isinstance(number,int) == False:
+        number = random.randint(1, 2487)
+    url = "https://xkcd.com/" + str(number) + "/info.0.json"
     pg = requests.get(url)
+    if pg.status_code == 404:
+        return await ctx.reply("The requested comic does not exist.")
     json_data = json.loads(pg.text)
     img = json_data["img"]
+    title = json_data["title"]
     urllib.request.urlretrieve(img, "xkcd.png")
-    await ctx.reply(file=discord.File('xkcd.png'))
+    await ctx.reply(title, file=discord.File('xkcd.png'))
 
 @bot.command(name='startcb', help='Starts a new Cow Bulls game')
 async def startcowbull(ctx, dig : int):
